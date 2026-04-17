@@ -1,22 +1,37 @@
-# 🚀 End-to-End DevSecOps CI/CD Pipeline on AWS
+# 🚀 Netflix Clone – End-to-End DevSecOps Pipeline on Kubernetes & AWS EKS
 
 ## 📌 Project Overview
 
-This project demonstrates a **complete DevSecOps pipeline** for deploying a Netflix clone application using modern tools and best practices.
+This project demonstrates a production-ready DevSecOps pipeline for deploying a Netflix clone application using modern cloud-native tools and best practices.
 
-It covers:
-- Continuous Integration (CI)
-- Continuous Delivery (CD)
-- Security Scanning
-- Containerization
-- Monitoring
+It covers the complete lifecycle:
+-Continuous Integration (CI)
+-Continuous Delivery (CD)
+-Security Scanning
+-Containerization
+-Kubernetes Orchestration
+-Monitoring & Observability
+-Cloud Deployment on AWS EKS
+
+---
+
+##🔥 Why This Project?
+
+Unlike basic deployments, this project simulates real-world DevOps workflows:
+
+✔ Automated CI/CD pipeline
+✔ Integrated security scanning (DevSecOps)
+✔ Kubernetes auto-scaling (HPA)
+✔ Monitoring with Prometheus & Grafana
+✔ Deployment on AWS EKS
+✔ Public access via LoadBalancer & Ingress
 
 ---
 
 ## 🏗️ Architecture
 
 ### Architecture Diagram
-![Architecture](Screenshots/architecture.png)
+![Architecture](Screenshots/architecture1.png)
 
 ---
 
@@ -56,122 +71,149 @@ It covers:
                 └──────┬───────┘
                        │
                        ▼
-                ┌──────────────┐
-                │   AWS EC2    │
-                │  (Nginx)     │
-                └──────┬───────┘
+        ┌──────────────────────────────┐
+        │ Kubernetes (Local Cluster)   │
+        │ Deployment + Service + HPA   │
+        └──────────────┬───────────────┘
+                       │
+                       ▼
+        ┌──────────────────────────────┐
+        │ Prometheus + Grafana         │
+        │ Monitoring & Metrics         │
+        └──────────────┬───────────────┘
+                       │
+                       ▼
+        ┌──────────────────────────────┐
+        │ AWS EKS Cluster              │
+        │ Managed Kubernetes           │
+        └──────────────┬───────────────┘
+                       │
+                       ▼
+        ┌──────────────────────────────┐
+        │ LoadBalancer (AWS ELB)       │
+        └──────────────┬───────────────┘
+                       │
+                       ▼
+        ┌──────────────────────────────┐
+        │ Ingress (NGINX Controller)   │
+        └──────────────┬───────────────┘
                        │
                        ▼
                 ┌──────────────┐
-                │   Users      │
+                │    Users     │
                 └──────────────┘
-
-        Monitoring Stack:
-        ┌──────────────┐
-        │ Prometheus   │
-        └──────┬───────┘
-               ▼
-        ┌──────────────┐
-        │  Grafana     │
-        └──────────────┘
 ```
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category | Tools Used |
-|--------|------------|
-| CI/CD | Jenkins |
-| Code Quality | SonarQube |
-| Security | Trivy |
-| Containerization | Docker |
-| Monitoring | Prometheus, Grafana |
-| Frontend | React (Netflix Clone) |
-| Cloud | AWS EC2 |
-| Web Server | Nginx |
+| Category         | Tools Used            |
+| ---------------- | --------------------- |
+| CI/CD            | Jenkins               |
+| Code Quality     | SonarQube             |
+| Security         | Trivy                 |
+| Containerization | Docker                |
+| Orchestration    | Kubernetes, AWS EKS   |
+| Monitoring       | Prometheus, Grafana   |
+| Cloud            | AWS (EKS, ELB)        |
+| Web Server       | Nginx                 |
+| Frontend         | React (Netflix Clone) |
+
 
 ---
 
 ## ⚙️ Pipeline Stages
 
-### 🔹 1. Code Checkout
-- Pulls source code from GitHub
+###🔹 1. Code Checkout
+-Pulls code from GitHub via webhook
 
-### 🔹 2. Install Dependencies
-- Runs `npm install`
+###🔹 2. Install Dependencies
+-Runs npm install
 
-### 🔹 3. Static Code Analysis
-- SonarQube scans code quality and bugs
+###🔹 3. Static Code Analysis
+-SonarQube scans code quality & vulnerabilities
 
-### 🔹 4. Security Scan
-- Trivy scans Docker image for vulnerabilities
+###🔹 4. Security Scan
+-Trivy scans Docker image for vulnerabilities
 
-### 🔹 5. Docker Build & Push
-- Builds Docker image
-- Pushes to DockerHub
+###🔹 5. Docker Build & Push
+-Builds image and pushes to DockerHub
 
-### 🔹 6. Deployment
-- Runs container on EC2 using Nginx
+###🔹 6. Deployment
+-EC2 → Kubernetes → AWS EKS
 
 ---
 
-## 🔐 Security Implementation
+## 🔐 ☸️ Kubernetes Implementation
 
-- Static Code Analysis using SonarQube
-- Container Vulnerability Scanning using Trivy
-- Identified and handled medium & high vulnerabilities
+-Deployment & Service setup
+-NodePort → LoadBalancer exposure
+-Ingress Controller (NGINX)
+-Horizontal Pod Autoscaler (HPA)
 
 ---
 
 ## 📊 Monitoring Setup
 
-### 🔹 Prometheus
-- Collects system and container metrics
+###🔹 Prometheus
+-Collects metrics from cluster and nodes
 
-### 🔹 Grafana
-- Visualizes metrics via dashboards
+###🔹 Grafana
+-Visualizes metrics via dashboards
 
 ### 📈 Metrics Monitored
-- CPU usage
-- Memory usage
-- Disk utilization
-- Container performance
+
+-CPU usage
+-Memory usage
+-Pod performance
+-Node health
+-Auto-scaling behavior
 
 ---
 
-## 🌐 Application
+## 🌐 Application Deployment
 
-- Netflix Clone (React-based)
-- Integrated with TMDB API
-- Served via Nginx
+-Netflix Clone (React-based)
+-Integrated with TMDB API
+-Deployed on:
+  --Docker (Local)
+  --Kubernetes
+  --AWS EKS
 
 ---
 
-## 🚀 How to Run
+## 🚀 🚀 How to Run
 
-### 1. Clone Repository
-```bash
-git clone https://github.com/faizan-ab/Deploy-Netflix-Clone-on-Kubernetes.git
-cd Deploy-Netflix-Clone-on-Kubernetes
+###🔹 Clone Repository
+``` bash
+$git clone https://github.com/faizan-ab/Deploy-Netflix-Clone-on-Kubernetes.git
+$cd Deploy-Netflix-Clone-on-Kubernetes
 
-2. Build Docker Image
-docker build -t netflix .
-3. Run Container
-docker run -d -p 8081:80 netflix
-4. Access Application
-http://<your-ec2-ip>:8081
+###🔹 Docker
+$docker build -t netflix
+$docker run -d -p 8081:80 netflix
+
+###🔹 Kubernetes
+$kubectl apply -f deployment.yaml
+$kubectl apply -f service.yaml
+
+###🔹 Enable Auto Scaling
+$kubectl autoscale deployment netflix-deployment --cpu-percent=50 --min=1 --max=5
+
+###🔹 Monitoring
+$helm install monitor prometheus-community/kube-prometheus-stack
+
+###🔹 AWS EKS
+$eksctl create cluster --name netflix-cluster --region ap-south-1
+
+###🔹 Ingress
+$kubectl apply -f ingress.yaml
+
+###🔹 Access Application
+ http://<your-ec2-ip>:8081
+
 ```
-
-## 🧠 Challenges & Fixes
-
-| Issue                            | Solution                    |
-| -------------------------------- | --------------------------- |
-| SonarQube connection timeout     | Fixed using localhost       |
-| Docker build failure (yarn.lock) | Updated Dockerfile          |
-| API not loading                  | Fixed environment variables |
-| React routing 404                | Configured Nginx            |
-| TypeScript build errors          | Handled build gracefully    |
 
 ## 📷 Screenshots
 
