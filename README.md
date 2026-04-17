@@ -19,12 +19,17 @@ It covers the complete lifecycle:
 
 Unlike basic deployments, this project simulates real-world DevOps workflows:
 
-- ✔ Automated CI/CD pipeline
-- ✔ Integrated security scanning (DevSecOps)
-- ✔ Kubernetes auto-scaling (HPA)
-- ✔ Monitoring with Prometheus & Grafana
-- ✔ Deployment on AWS EKS
-- ✔ Public access via LoadBalancer & Ingress
+✔ Automated CI/CD pipeline
+
+✔ Integrated security scanning (DevSecOps)
+
+✔ Kubernetes auto-scaling (HPA)
+
+✔ Monitoring with Prometheus & Grafana
+
+✔ Deployment on AWS EKS
+
+✔ Public access via LoadBalancer & Ingress
 
 ---
 
@@ -164,11 +169,11 @@ Unlike basic deployments, this project simulates real-world DevOps workflows:
 
 ### 📈 Metrics Monitored
 
--CPU usage
--Memory usage
--Pod performance
--Node health
--Auto-scaling behavior
+- CPU usage
+- Memory usage
+- Pod performance
+- Node health
+- Auto-scaling behavior
 
 ---
 
@@ -250,7 +255,7 @@ http://<your-ec2-ip>:8081
 ![Pods](Screenshots/kube-pods.png)
 
 ### HPA Scaling
-![HPA](Screenshots/scaling.png)
+![HPA](Screenshots/hpa.png)
 
 ### Grafana Dashboard
 ![Grafana](Screenshots/grafana1.png)
