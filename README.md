@@ -5,13 +5,13 @@
 This project demonstrates a production-ready DevSecOps pipeline for deploying a Netflix clone application using modern cloud-native tools and best practices.
 
 It covers the complete lifecycle:
--Continuous Integration (CI)
--Continuous Delivery (CD)
--Security Scanning
--Containerization
--Kubernetes Orchestration
--Monitoring & Observability
--Cloud Deployment on AWS EKS
+- Continuous Integration (CI)
+- Continuous Delivery (CD)
+- Security Scanning
+- Containerization
+- Kubernetes Orchestration
+- Monitoring & Observability
+- Cloud Deployment on AWS EKS
 
 ---
 
@@ -19,12 +19,12 @@ It covers the complete lifecycle:
 
 Unlike basic deployments, this project simulates real-world DevOps workflows:
 
-✔ Automated CI/CD pipeline
-✔ Integrated security scanning (DevSecOps)
-✔ Kubernetes auto-scaling (HPA)
-✔ Monitoring with Prometheus & Grafana
-✔ Deployment on AWS EKS
-✔ Public access via LoadBalancer & Ingress
+- ✔ Automated CI/CD pipeline
+- ✔ Integrated security scanning (DevSecOps)
+- ✔ Kubernetes auto-scaling (HPA)
+- ✔ Monitoring with Prometheus & Grafana
+- ✔ Deployment on AWS EKS
+- ✔ Public access via LoadBalancer & Ingress
 
 ---
 
@@ -147,10 +147,10 @@ Unlike basic deployments, this project simulates real-world DevOps workflows:
 
 ## 🔐 ☸️ Kubernetes Implementation
 
--Deployment & Service setup
--NodePort → LoadBalancer exposure
--Ingress Controller (NGINX)
--Horizontal Pod Autoscaler (HPA)
+- Deployment & Service setup
+- NodePort → LoadBalancer exposure
+- Ingress Controller (NGINX)
+- Horizontal Pod Autoscaler (HPA)
 
 ---
 
@@ -174,46 +174,60 @@ Unlike basic deployments, this project simulates real-world DevOps workflows:
 
 ## 🌐 Application Deployment
 
--Netflix Clone (React-based)
--Integrated with TMDB API
--Deployed on:
-  --Docker (Local)
-  --Kubernetes
-  --AWS EKS
+- Netflix Clone (React-based)
+- Integrated with TMDB API
+- Deployed on:
+  -- Docker (Local)
+  -- Kubernetes
+  -- AWS EKS
 
 ---
 
 ## 🚀 🚀 How to Run
 
 ###🔹 Clone Repository
-``` bash
+```
 $git clone https://github.com/faizan-ab/Deploy-Netflix-Clone-on-Kubernetes.git
 $cd Deploy-Netflix-Clone-on-Kubernetes
+```
 
 ###🔹 Docker
+```
 $docker build -t netflix
 $docker run -d -p 8081:80 netflix
+```
 
 ###🔹 Kubernetes
+```
 $kubectl apply -f deployment.yaml
 $kubectl apply -f service.yaml
+```
 
 ###🔹 Enable Auto Scaling
+```
 $kubectl autoscale deployment netflix-deployment --cpu-percent=50 --min=1 --max=5
+```
 
 ###🔹 Monitoring
+```
 $helm install monitor prometheus-community/kube-prometheus-stack
+```
 
 ###🔹 AWS EKS
+```
 $eksctl create cluster --name netflix-cluster --region ap-south-1
+```
 
 ###🔹 Ingress
+```
 $kubectl apply -f ingress.yaml
-
+```
 ###🔹 Access Application
- http://<your-ec2-ip>:8081
 
 ```
+http://<your-ec2-ip>:8081
+```
+
 
 ## 📷 Screenshots
 
@@ -266,27 +280,27 @@ $kubectl apply -f ingress.yaml
 
 ## 🎯 Key Learnings
 
--End-to-end DevSecOps pipeline design
--Kubernetes deployment & scaling
--Monitoring production systems
--AWS EKS cluster management
--Debugging real-world DevOps issues
+- End-to-end DevSecOps pipeline design
+- Kubernetes deployment & scaling
+- Monitoring production systems
+- AWS EKS cluster management
+- Debugging real-world DevOps issues
 
 ---
 
 ## 🚀 Future Enhancements
 
--Helm-based deployments
--CI/CD optimization
--Alerting (Grafana Alerts)
--Custom domain with Route53
--GitOps using ArgoCD
+- Helm-based deployments
+- CI/CD optimization
+- Alerting (Grafana Alerts)
+- Custom domain with Route53
+- GitOps using ArgoCD
 
 ---
 
 ## 👨‍💻 Author
 
--Mohammed Abdul Faizan
--DevOps Enthuciast
-⭐ Show Your Support
-If you like this project, give it a ⭐ on GitHub!
+- Mohammed Abdul Faizan
+- DevOps Enthuciast
+- ⭐ Show Your Support
+- If you like this project, give it a ⭐ on GitHub!
