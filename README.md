@@ -229,24 +229,64 @@ $kubectl apply -f ingress.yaml
 ### SonarQube
 ![Sonar](Screenshots/sonarqube.png)
 
+### Docker Running Container
+![Docker](Screenshots/docker.png)
+
+### Kubernetes Pods
+![Pods](Screenshots/kube-pods.png)
+
+### HPA Scaling
+![HPA](Screenshots/scaling.png)
+
+### Grafana Dashboard
+![Grafana](Screenshots/grafana1.png)
+
+### AWS EKS Nodes
+![Nodes](Screenshots/kube-nodes.png)
+
+### Application Live (EKS)
+![App-DNS](Screenshots/app-elb-dns.png)
+
+---
+
+## 🧠 Challenges & Fixes
+
+| Issue                | Solution                     |
+| -------------------- | ---------------------------- |
+| SonarQube timeout    | Fixed configuration          |
+| Docker build issues  | Updated Dockerfile           |
+| API not loading      | Fixed environment variables  |
+| React routing 404    | Configured Nginx             |
+| Pods Pending         | Fixed taints/resources       |
+| Metrics server crash | Corrected args               |
+| EKS node failure     | Used flexible instance types |
+| Ingress DNS issues   | Fixed host configuration     |
+
+---
+
 ## 🎯 Key Learnings
 
-Building real-world CI/CD pipelines
-Debugging DevOps issues
-Container security practices
-Monitoring production systems
-Handling environment configurations
+-End-to-end DevSecOps pipeline design
+-Kubernetes deployment & scaling
+-Monitoring production systems
+-AWS EKS cluster management
+-Debugging real-world DevOps issues
+
+---
 
 ## 🚀 Future Enhancements
 
-Kubernetes Deployment (EKS)
-Helm Charts
-CI/CD optimization
-Alerting system (Grafana alerts)
+-Helm-based deployments
+-CI/CD optimization
+-Alerting (Grafana Alerts)
+-Custom domain with Route53
+-GitOps using ArgoCD
 
+---
 
 ## 👨‍💻 Author
 
-Faizan
+-Mohammed Abdul Faizan
+-DevOps Enthuciast
 ⭐ Show Your Support
 If you like this project, give it a ⭐ on GitHub!
