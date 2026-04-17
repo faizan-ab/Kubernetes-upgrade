@@ -15,7 +15,7 @@ It covers the complete lifecycle:
 
 ---
 
-##🔥 Why This Project?
+## 🔥 Why This Project?
 
 Unlike basic deployments, this project simulates real-world DevOps workflows:
 
@@ -36,7 +36,7 @@ Unlike basic deployments, this project simulates real-world DevOps workflows:
 ## 🏗️ Architecture
 
 ### Architecture Diagram
-![Architecture](Screenshots/architecture1.png)
+![Architecture](Screenshots/Netflix-clone-DevSecOps-pipeline-diagram.png)
 
 ---
 
